@@ -4,231 +4,337 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MD. ASRAFUL ISLAM - Professional Portfolio</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
         :root {
-            --bg-color: #f8fafc;
+            --bg-gradient: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
             --card-bg: #ffffff;
-            --text-main: #1e293b;
-            --text-muted: #64748b;
+            --text-main: #0f172a;
+            --text-muted: #475569;
             --accent: #2563eb;
+            --accent-hover: #1d4ed8;
             --border: #e2e8f0;
+            --badge-bg: #eff6ff;
+            --badge-text: #1d4ed8;
         }
+
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'Plus Jakarta Sans', sans-serif;
         }
+
         body {
-            background: linear-gradient(135deg, #f1f5f9 0%, #e2e8f0 100%);
+            background: #f8fafc;
             color: var(--text-main);
-            line-height: 1.6;
+            line-height: 1.7;
             padding: 40px 20px;
             min-height: 100vh;
         }
-        .container {
-            max-width: 800px;
+
+        .portfolio-wrapper {
+            max-width: 900px;
             margin: 0 auto;
             background: var(--card-bg);
-            padding: 50px;
-            border-radius: 16px;
-            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05), 0 8px 10px -6px rgba(0, 0, 0, 0.05);
-            border: 1px solid var(--border);
+            padding: 60px;
+            border-radius: 24px;
+            box-shadow: 0 20px 40px -15px rgba(15, 23, 42, 0.08), 0 0 1px 1px rgba(0, 0, 0, 0.04);
         }
+
+        /* Hero / Profile Header Section */
         .profile-header {
             text-align: center;
-            margin-bottom: 40px;
-            border-bottom: 2px solid var(--border);
-            padding-bottom: 30px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
+            margin-bottom: 50px;
+            position: relative;
         }
+
+        .profile-pic-container {
+            position: relative;
+            width: 170px;
+            height: 170px;
+            margin: 0 auto 25px auto;
+        }
+
         .profile-pic {
-            width: 160px;
-            height: 160px;
+            width: 100%;
+            height: 100%;
             border-radius: 50%;
             object-fit: cover;
-            object-position: center 20%; /* Adjusted to prevent cutting head */
-            border: 4px solid var(--card-bg);
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-            margin-bottom: 20px;
+            object-position: center 20%; /* Ensures face is properly centered */
+            border: 4px solid #fff;
+            box-shadow: 0 10px 25px rgba(37, 99, 235, 0.2);
+            transition: transform 0.3s ease;
         }
-        h2.name-title {
-            font-size: 2.4rem;
+
+        .profile-pic:hover {
+            transform: scale(1.03);
+        }
+
+        .name-title {
+            font-size: 2.5rem;
             color: #0f172a;
-            font-weight: 700;
-            margin-bottom: 8px;
-            letter-spacing: -0.5px;
+            font-weight: 800;
+            letter-spacing: -1px;
+            margin-bottom: 6px;
         }
-        h1 {
-            font-size: 1.5rem;
+
+        .main-role {
+            font-size: 1.3rem;
             color: var(--accent);
-            margin-bottom: 10px;
-            font-weight: 600;
+            font-weight: 700;
+            margin-bottom: 12px;
         }
+
         .tagline {
-            font-size: 1.1rem;
+            font-size: 1.05rem;
             color: var(--text-muted);
             font-weight: 500;
-            margin-bottom: 20px;
+            background: var(--badge-bg);
+            color: var(--badge-text);
+            display: inline-block;
+            padding: 6px 16px;
+            border-radius: 30px;
+            border: 1px solid #dbeafe;
         }
+
+        /* Section Styling */
         section {
-            margin-bottom: 35px;
+            margin-bottom: 45px;
         }
+
         h2 {
-            font-size: 1.3rem;
+            font-size: 1.25rem;
             color: #0f172a;
-            margin-bottom: 15px;
+            margin-bottom: 20px;
             padding-bottom: 8px;
-            border-bottom: 2px solid var(--border);
+            border-bottom: 2px solid #f1f5f9;
             text-transform: uppercase;
-            letter-spacing: 0.5px;
+            letter-spacing: 1px;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 10px;
         }
+
         p {
             color: var(--text-muted);
-            margin-bottom: 12px;
+            margin-bottom: 14px;
             font-size: 1.05rem;
         }
-        .skills-grid {
+
+        strong {
+            color: #0f172a;
+        }
+
+        /* Services Grid */
+        .services-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
             gap: 20px;
         }
-        .skill-item {
+
+        .service-card {
             background: #f8fafc;
-            padding: 20px;
-            border-radius: 10px;
+            padding: 24px;
+            border-radius: 14px;
             border: 1px solid var(--border);
-            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            transition: all 0.3s ease;
         }
-        .skill-item:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+
+        .service-card:hover {
+            transform: translateY(-4px);
+            border-color: #cbd5e1;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.04);
+            background: #ffffff;
         }
-        .skill-item h3 {
-            font-size: 1.1rem;
-            color: #1e293b;
-            margin-bottom: 8px;
+
+        .service-card h3 {
+            font-size: 1.15rem;
+            color: #0f172a;
+            margin-bottom: 10px;
+            font-weight: 700;
         }
-        .skill-item p {
+
+        .service-card p {
             font-size: 0.95rem;
             margin-bottom: 0;
             color: var(--text-muted);
         }
-        .qa-image-container {
-            text-align: center;
+
+        /* QA Feedback Display */
+        .qa-container {
             background: #f8fafc;
-            padding: 15px;
+            padding: 24px;
+            border-radius: 16px;
+            border: 1px solid var(--border);
+            text-align: center;
+        }
+
+        .qa-desc {
+            margin-bottom: 20px;
+            font-size: 1.05rem;
+        }
+
+        .qa-image-wrapper {
+            background: #ffffff;
+            padding: 12px;
             border-radius: 12px;
             border: 1px solid var(--border);
+            display: inline-block;
+            max-width: 100%;
         }
+
         .qa-feedback-img {
             max-width: 100%;
             height: auto;
             border-radius: 8px;
-            border: 1px solid var(--border);
-            box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+            display: block;
         }
+
+        /* Experience & Education Item */
+        .timeline-card {
+            background: #f8fafc;
+            padding: 24px;
+            border-radius: 14px;
+            border: 1px solid var(--border);
+        }
+
+        .timeline-card h3 {
+            font-size: 1.2rem;
+            color: #0f172a;
+            font-weight: 700;
+        }
+
+        .company-meta {
+            color: var(--accent);
+            font-weight: 600;
+            font-size: 0.95rem;
+            margin-top: 2px;
+            margin-bottom: 10px;
+        }
+
+        /* Lists & Contacts */
         .info-list {
             list-style: none;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 15px;
         }
+
         .info-list li {
-            margin-bottom: 12px;
-            font-size: 1.05rem;
+            background: #f8fafc;
+            padding: 16px 20px;
+            border-radius: 12px;
+            border: 1px solid var(--border);
+            font-size: 1rem;
             color: var(--text-muted);
         }
+
         .info-list a {
             color: var(--accent);
             text-decoration: none;
-            font-weight: 500;
+            font-weight: 600;
             transition: color 0.2s;
         }
+
         .info-list a:hover {
+            color: var(--accent-hover);
             text-decoration: underline;
-            color: #1d4ed8;
         }
-        strong {
-            color: #1e293b;
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .portfolio-wrapper {
+                padding: 30px 20px;
+            }
+            .name-title {
+                font-size: 2rem;
+            }
         }
     </style>
 </head>
 <body>
 
-    <div class="container">
+    <div class="portfolio-wrapper">
         <!-- Profile Header -->
         <header class="profile-header">
-            <img src="profile.png" alt="MD. ASRAFUL ISLAM" class="profile-pic">
-            <h2 class="name-title">MD. ASRAFUL ISLAM</h2>
-            <h1>AI & Workflow Automation Specialist</h1>
-            <div class="tagline">B2B Lead Generation Expert | Cyber Security Practitioner</div>
+            <div class="profile-pic-container">
+                <img src="profile.png" alt="MD. ASRAFUL ISLAM" class="profile-pic">
+            </div>
+            <h1 class="name-title">MD. ASRAFUL ISLAM</h1>
+            <div class="main-role">AI & Workflow Automation Specialist</div>
+            <div class="tagline">B2B Lead Generation Expert | Audio Transcriptionist | Cyber Security Practitioner</div>
         </header>
 
         <!-- About Me -->
         <section>
-            <h2>About Me</h2>
-            <p>Hello! I am a dynamic professional bridging the worlds of smart technology, business growth, and digital security. As an <strong>AI & Workflow Automation Specialist</strong>, I help organizations scale efficiently.</p>
-            <p>Alongside my core expertise in <strong>B2B lead generation, data management, and Python-driven automation</strong>, I maintain a solid foundation in <strong>Cyber Security</strong>, ensuring that digital processes remain protected and resilient.</p>
+            <h2>🚀 About Me</h2>
+            <p>Hello! I am a dynamic professional bridging the worlds of smart technology, business growth, and digital security. As an <strong>AI & Workflow Automation Specialist</strong>, I design and implement systems that help organizations scale efficiently.</p>
+            <p>Alongside my core expertise in <strong>B2B lead generation, Python-driven automation, and audio transcribing</strong>, I maintain a solid foundation in <strong>Cyber Security</strong>, ensuring digital workflows remain secure and resilient.</p>
         </section>
 
         <!-- Services Offered -->
         <section>
-            <h2>Services Offered</h2>
-            <div class="skills-grid">
-                <div class="skill-item">
+            <h2>💼 Professional Services</h2>
+            <div class="services-grid">
+                <div class="service-card">
                     <h3>B2B Lead Generation</h3>
-                    <p>Targeted prospecting, list building using LinkedIn Sales Navigator, Apollo.io, and Hunter.io.</p>
+                    <p>Targeted prospecting and precise list building using LinkedIn Sales Navigator, Apollo.io, and Hunter.io.</p>
                 </div>
-                <div class="skill-item">
-                    <h3>LinkedIn Research & Data Management</h3>
-                    <p>Comprehensive LinkedIn profile research and accurate CRM data entry/management (HubSpot).</p>
+                <div class="service-card">
+                    <h3>LinkedIn Research & CRM</h3>
+                    <p>Comprehensive LinkedIn profile research and accurate data entry & management using HubSpot.</p>
                 </div>
-                <div class="skill-item">
+                <div class="service-card">
                     <h3>Workflow Automation</h3>
-                    <p>Designing and implementing Python scripts and low-code integrations for business process efficiency.</p>
+                    <p>Designing custom Python scripts and low-code integrations to optimize business efficiency.</p>
                 </div>
-                <div class="skill-item">
+                <div class="service-card">
                     <h3>AI Evaluation & Training</h3>
-                    <p>Expert-level evaluation, training, and fine-tuning of AI models, specializing in Bengali language contexts.</p>
+                    <p>Expert-level model evaluation, fine-tuning, and training with specialized focus on Bengali language context.</p>
                 </div>
-                <div class="skill-item">
-                    <h3>Audio Transcription / Transcriber</h3>
-                    <p>High-accuracy audio transcribing services, carefully listening to audio/video recordings and writing precise text.</p>
+                <div class="service-card">
+                    <h3>Audio Transcription</h3>
+                    <p>High-accuracy transcribing services, converting complex audio/video media into precise written records.</p>
                 </div>
             </div>
         </section>
 
         <!-- Quality Assurance (QA) Feedback -->
         <section>
-            <h2>Quality Assurance (QA) Feedback</h2>
-            <p style="margin-bottom: 15px;">Maintaining high accuracy and top-tier performance standards. My current average QA score is <strong>3.90 / 2.00 (Target)</strong>, reflecting exceptional quality in AI evaluation and training.</p>
-            <div class="qa-image-container">
-                <img src="QA-Feedback.png" alt="Outlier AI QA Feedback Score" class="qa-feedback-img">
+            <h2>⭐ Quality Assurance (QA) Performance</h2>
+            <div class="qa-container">
+                <p class="qa-desc">Maintaining strict quality, accuracy, and top-tier performance standards. My average QA score stands at <strong>3.90 / 2.00 (Target)</strong>, reflecting exceptional precision in AI evaluation.</p>
+                <div class="qa-image-wrapper">
+                    <img src="QA-Feedback.png" alt="Outlier AI QA Feedback Score" class="qa-feedback-img">
+                </div>
             </div>
         </section>
 
         <!-- Work Experience -->
         <section>
-            <h2>Work Experience</h2>
-            <div class="skill-item">
+            <h2>📈 Work Experience</h2>
+            <div class="timeline-card">
                 <h3>AI Evaluator / Trainer (Bengali Expert)</h3>
-                <p><strong>Outlier AI</strong> | May 2026 – Present</p>
-                <p style="margin-top: 5px;">Evaluating and training AI models for accuracy, language precision, and contextual relevance, specifically for the Bengali language.</p>
+                <div class="company-meta">Outlier AI | May 2026 – Present</div>
+                <p>Evaluating and training advanced AI models for accuracy, linguistic precision, and contextual relevance, specializing in regional Bengali language subtleties.</p>
             </div>
         </section>
 
         <!-- Education -->
         <section>
-            <h2>Education</h2>
-            <div class="skill-item">
+            <h2>🎓 Education</h2>
+            <div class="timeline-card">
                 <h3>Higher Secondary Certificate (HSC)</h3>
-                <p><strong>Nazimuddin Bhuiyan Degree College</strong></p>
+                <div class="company-meta">Nazimuddin Bhuiyan Degree College</div>
             </div>
         </section>
 
         <!-- Languages -->
         <section>
-            <h2>Languages</h2>
+            <h2>🗣️ Languages</h2>
             <ul class="info-list">
                 <li><strong>Bengali:</strong> Native / Bilingual</li>
                 <li><strong>English:</strong> Professional Working Proficiency</li>
@@ -237,11 +343,11 @@
 
         <!-- Contact Information -->
         <section>
-            <h2>Contact Information</h2>
+            <h2>📬 Get In Touch</h2>
             <ul class="info-list">
-                <li><strong>Email:</strong> <a href="mailto:mdislam.research@gmail.com">mdislam.research@gmail.com</a></li>
-                <li><strong>LinkedIn:</strong> <a href="https://linkedin.com/in/asraful-islam-pro" target="_blank">https://linkedin.com/in/asraful-islam-pro</a></li>
-                <li><strong>Location:</strong> Sonargaon, Narayanganj, Dhaka, Bangladesh</li>
+                <li><strong>Email:</strong> <br><a href="mailto:mdislam.research@gmail.com">mdislam.research@gmail.com</a></li>
+                <li><strong>LinkedIn:</strong> <br><a href="https://linkedin.com/in/asraful-islam-pro" target="_blank">View Profile</a></li>
+                <li><strong>Location:</strong> <br>Sonargaon, Narayanganj, Dhaka, Bangladesh</li>
             </ul>
         </section>
     </div>
