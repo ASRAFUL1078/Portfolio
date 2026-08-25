@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Professional Portfolio</title>
+    <style>
+        :root {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --text-main: #f8fafc;
+            --text-muted: #94a3b8;
+            --accent: #38bdf8;
+            --border: #334155;
+        }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+            padding: 20px;
+        }
+        .container {
+            max-width: 800px;
+            margin: 40px auto;
+            background: var(--card-bg);
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+            border: 1px solid var(--border);
+        }
+        header {
+            text-align: center;
+            margin-bottom: 35px;
+            border-bottom: 1px solid var(--border);
+            padding-bottom: 25px;
+        }
+        h1 {
+            font-size: 2.2rem;
+            color: var(--text-main);
+            margin-bottom: 10px;
+        }
+        .tagline {
+            font-size: 1.1rem;
+            color: var(--accent);
+            font-weight: 600;
+        }
+        section {
+            margin-bottom: 30px;
+        }
+        h2 {
+            font-size: 1.4rem;
+            color: var(--accent);
+            margin-bottom: 15px;
+            border-left: 4px solid var(--accent);
+            padding-left: 10px;
+        }
+        p {
+            color: var(--text-muted);
+            margin-bottom: 10px;
+        }
+        .skills-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+        }
+        .skill-item {
+            background: rgba(56, 189, 248, 0.05);
+            padding: 12px 15px;
+            border-radius: 8px;
+            border: 1px solid var(--border);
+        }
+        .skill-item h3 {
+            font-size: 1rem;
+            color: var(--text-main);
+            margin-bottom: 5px;
+        }
+        .experience-item {
+            margin-bottom: 15px;
+        }
+        .experience-item h3 {
+            font-size: 1.1rem;
+            color: var(--text-main);
+        }
+        .date {
+            font-size: 0.9rem;
+            color: var(--accent);
+            margin-bottom: 5px;
+            display: block;
+        }
+        .contact-list {
+            list-style: none;
+        }
+        .contact-list li {
+            margin-bottom: 8px;
+            color: var(--text-muted);
+        }
+        .contact-list a {
+            color: var(--accent);
+            text-decoration: none;
+        }
+        .contact-list a:hover {
+            text-decoration: underline;
+        }
+        @media (max-width: 600px) {
+            .skills-grid {
+                grid-template-columns: 1fr;
+            }
+            .container {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <!-- Header / Headline -->
+        <header>
+            <h1>AI & Workflow Automation Specialist</h1>
+            <div class="tagline">B2B Lead Generation Expert | Cyber Security Practitioner</div>
+        </header>
+
+        <!-- About Me -->
+        <section>
+            <h2>About Me</h2>
+            <p>Hello! I am a dynamic professional bridging the worlds of smart technology, business growth, and digital security. As an <strong>AI & Workflow Automation Specialist</strong>, I help organizations scale efficiently by streamlining operations and eliminating manual bottlenecks.</p>
+            <p>Alongside my core expertise in <strong>B2B lead generation, data management, and Python-driven automation</strong>, I maintain a solid foundation in <strong>Cyber Security</strong>, ensuring that digital processes remain secure and resilient. Driven by a passion for continuous learning and modern digital tools, my focus is always on delivering secure, high-impact, and measurable results.</p>
+        </section>
+
+        <!-- Skills & Expertise -->
+        <section>
+            <h2>Skills & Expertise</h2>
+            <div class="skills-grid">
+                <div class="skill-item">
+                    <h3>B2B Lead Generation</h3>
+                    <p>LinkedIn Sales Navigator, Apollo.io, Hunter.io, HubSpot, Targeted Prospecting</p>
+                </div>
+                <div class="skill-item">
+                    <h3>AI & Automation</h3>
+                    <p>Workflow Automation, Python, No-Code/Low-Code Tools</p>
+                </div>
+                <div class="skill-item">
+                    <h3>Cyber Security</h3>
+                    <p>Foundational Digital Security & Secure Workflow Practices</p>
+                </div>
+                <div class="skill-item">
+                    <h3>Data Management</h3>
+                    <p>Data Entry, Structured Record Management & Processing</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Experience -->
+        <section>
+            <h2>Professional Experience</h2>
+            <div class="experience-item">
+                <h3>AI Platform Contributor (Bengali AI Evolution)</h3>
+                <span class="date">Outlier AI | May 2026 – Present</span>
+                <p>Working on advanced AI evolution and training projects as a specialized Bengali-speaking contributor, ensuring accurate language processing and model enhancement.</p>
+            </div>
+            <div class="experience-item" style="margin-top: 20px;">
+                <h3>Local Market & Freelance Practice</h3>
+                <span class="date">Ongoing</span>
+                <p>Actively engaged in practical implementation within the local market and expanding professional efforts into the freelance market, focusing on targeted B2B lead generation strategies and foundational cyber security practices.</p>
+            </div>
+        </section>
+
+        <!-- Contact Information -->
+        <section>
+            <h2>Contact Information</h2>
+            <ul class="contact-list">
+                <li><strong>Email:</strong> <a href="mailto:your-email@example.com">your-email@example.com</a></li>
+                <li><strong>LinkedIn:</strong> <a href="https://linkedin.com/in/your-profile" target="_blank">linkedin.com/in/your-profile</a></li>
+                <li><strong>Location:</strong> Sonargaon, Narayanganj, Dhaka, Bangladesh</li>
+            </ul>
+        </section>
+    </div>
+
+</body>
+</html>
