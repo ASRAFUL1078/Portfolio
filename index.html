@@ -35,29 +35,42 @@
             box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05), 0 8px 10px -6px rgba(0, 0, 0, 0.05);
             border: 1px solid var(--border);
         }
-        header {
+        .profile-header {
             text-align: center;
             margin-bottom: 40px;
             border-bottom: 2px solid var(--border);
             padding-bottom: 30px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .profile-pic {
+            width: 160px;
+            height: 160px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid var(--card-bg);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            margin-bottom: 20px;
         }
         h2.name-title {
-            font-size: 2.2rem;
+            font-size: 2.4rem;
             color: #0f172a;
             font-weight: 700;
             margin-bottom: 8px;
             letter-spacing: -0.5px;
         }
         h1 {
-            font-size: 1.4rem;
+            font-size: 1.5rem;
             color: var(--accent);
-            margin-bottom: 12px;
+            margin-bottom: 10px;
             font-weight: 600;
         }
         .tagline {
-            font-size: 1rem;
+            font-size: 1.1rem;
             color: var(--text-muted);
             font-weight: 500;
+            margin-bottom: 20px;
         }
         section {
             margin-bottom: 35px;
@@ -78,7 +91,7 @@
         }
         .skills-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
             gap: 20px;
         }
         .skill-item {
@@ -98,24 +111,39 @@
             margin-bottom: 8px;
         }
         .skill-item p {
-            font-size: 0.92rem;
+            font-size: 0.95rem;
             margin-bottom: 0;
+            color: var(--text-muted);
         }
-        .contact-list {
+        .qa-image-container {
+            text-align: center;
+            background: #f8fafc;
+            padding: 15px;
+            border-radius: 12px;
+            border: 1px solid var(--border);
+        }
+        .qa-feedback-img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            border: 1px solid var(--border);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+        }
+        .info-list {
             list-style: none;
         }
-        .contact-list li {
+        .info-list li {
             margin-bottom: 12px;
             font-size: 1.05rem;
             color: var(--text-muted);
         }
-        .contact-list a {
+        .info-list a {
             color: var(--accent);
             text-decoration: none;
             font-weight: 500;
             transition: color 0.2s;
         }
-        .contact-list a:hover {
+        .info-list a:hover {
             text-decoration: underline;
             color: #1d4ed8;
         }
@@ -127,8 +155,9 @@
 <body>
 
     <div class="container">
-        <!-- Header / Headline -->
-        <header>
+        <!-- Profile Header -->
+        <header class="profile-header">
+            <img src="profile.png" alt="MD. ASRAFUL ISLAM" class="profile-pic">
             <h2 class="name-title">MD. ASRAFUL ISLAM</h2>
             <h1>AI & Workflow Automation Specialist</h1>
             <div class="tagline">B2B Lead Generation Expert | Cyber Security Practitioner</div>
@@ -141,36 +170,74 @@
             <p>Alongside my core expertise in <strong>B2B lead generation, data management, and Python-driven automation</strong>, I maintain a solid foundation in <strong>Cyber Security</strong>, ensuring that digital processes remain protected and resilient.</p>
         </section>
 
-        <!-- Skills & Expertise -->
+        <!-- Services Offered -->
         <section>
-            <h2>Skills & Expertise</h2>
+            <h2>Services Offered</h2>
             <div class="skills-grid">
                 <div class="skill-item">
                     <h3>B2B Lead Generation</h3>
-                    <p>LinkedIn Sales Navigator, Apollo.io, Hunter.io, HubSpot, Targeted Prospecting</p>
+                    <p>Targeted prospecting, list building using LinkedIn Sales Navigator, Apollo.io, and Hunter.io.</p>
+                </div>
+                <div class="skill-item">
+                    <h3>LinkedIn Research & Data Management</h3>
+                    <p>Comprehensive LinkedIn profile research and accurate CRM data entry/management (HubSpot).</p>
                 </div>
                 <div class="skill-item">
                     <h3>Workflow Automation</h3>
-                    <p>Python Automation, No-code/Low-code Integration, System Efficiency</p>
+                    <p>Designing and implementing Python scripts and low-code integrations for business process efficiency.</p>
                 </div>
                 <div class="skill-item">
-                    <h3>Cyber Security</h3>
-                    <p>Digital Security Best Practices, Threat Awareness, Risk Management</p>
+                    <h3>AI Evaluation & Training</h3>
+                    <p>Expert-level evaluation, training, and fine-tuning of AI models, specializing in Bengali language contexts.</p>
+                </div>
+                <div class="skill-item">
+                    <h3>Audio Transcription</h3>
+                    <p>High-accuracy transcription services, listening to audio/video content and providing precise written text.</p>
                 </div>
             </div>
         </section>
 
-       <!-- Languages -->
+        <!-- Quality Assurance (QA) Feedback -->
+        <section>
+            <h2>Quality Assurance (QA) Feedback</h2>
+            <p style="margin-bottom: 15px;">Maintaining high accuracy and top-tier performance standards. My current average QA score is <strong>3.90 / 2.00 (Target)</strong>, reflecting exceptional quality in AI evaluation and training.</p>
+            <div class="qa-image-container">
+                <img src="QA-Feedback.png" alt="Outlier AI QA Feedback Score" class="qa-feedback-img">
+            </div>
+        </section>
+
+        <!-- Work Experience -->
+        <section>
+            <h2>Work Experience</h2>
+            <div class="skill-item">
+                <h3>AI Evaluator / Trainer (Bengali Expert)</h3>
+                <p><strong>Outlier AI</strong> | May 2026 – Present</p>
+                <p style="margin-top: 5px;">Evaluating and training AI models for accuracy, language precision, and contextual relevance, specifically for the Bengali language.</p>
+            </div>
+        </section>
+
+        <!-- Education -->
+        <section>
+            <h2>Education</h2>
+            <div class="skill-item">
+                <h3>Higher Secondary Certificate (HSC)</h3>
+                <p><strong>Nazimuddin Bhuiyan Degree College</strong></p>
+            </div>
+        </section>
+
+        <!-- Languages -->
         <section>
             <h2>Languages</h2>
-            <ul class="contact-list">
+            <ul class="info-list">
                 <li><strong>Bengali:</strong> Native / Bilingual</li>
                 <li><strong>English:</strong> Professional Working Proficiency</li>
             </ul>
-        </section> <!-- Contact Information -->
+        </section>
+
+        <!-- Contact Information -->
         <section>
             <h2>Contact Information</h2>
-            <ul class="contact-list">
+            <ul class="info-list">
                 <li><strong>Email:</strong> <a href="mailto:mdislam.research@gmail.com">mdislam.research@gmail.com</a></li>
                 <li><strong>LinkedIn:</strong> <a href="https://linkedin.com/in/asraful-islam-pro" target="_blank">https://linkedin.com/in/asraful-islam-pro</a></li>
                 <li><strong>Location:</strong> Sonargaon, Narayanganj, Dhaka, Bangladesh</li>
